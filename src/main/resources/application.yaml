@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: sigai
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_sigai_imoveis
+    username: postgres
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
