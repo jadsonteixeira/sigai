@@ -15,8 +15,14 @@ public class Foto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long imovelId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "imovel_id", nullable = false)
+    private Imovel imovel;
+
     private String url;
+
     private String legenda;
+
     private Boolean principal;
 }

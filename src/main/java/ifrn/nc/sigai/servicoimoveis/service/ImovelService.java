@@ -24,8 +24,11 @@ public class ImovelService {
         return toResponseDTO(salvo);
     }
 
-    public List<Imovel> listar() {
-        return repository.findAll();
+    public List<ImovelResponseDTO> listar() {
+        return repository.findAll()
+                .stream()
+                .map(this::toResponseDTO)
+                .toList();
     }
 
     public List<Imovel> listarPorEndereco(String endereco) {
@@ -58,7 +61,7 @@ public class ImovelService {
     }
 
     private Imovel toEntity(ImovelRequestDTO dto) {
-        return new Imovel(null, dto.getEndereco(), dto.getValorAluguel(), dto.getDescricao());
+        return new Imovel(null, dto.getEndereco(), dto.getValorAluguel(), dto.getDescricao(), null);
     }
 
     private ImovelResponseDTO toResponseDTO(Imovel imovel) {
