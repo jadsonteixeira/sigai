@@ -29,8 +29,8 @@ public class ImovelController {
     }
 
     @GetMapping
-    public List<Imovel> listar() {
-        return service.listar();
+    public ResponseEntity<List<ImovelResponseDTO>> listar() {
+        return ResponseEntity.ok(service.listar());
     }
 
     @GetMapping("/endereco")

@@ -29,8 +29,8 @@ public class FotoController {
     }
 
     @GetMapping
-    public List<Foto> listar() {
-        return service.listar();
+    public ResponseEntity<List<FotoResponseDTO>> listar() {
+        return ResponseEntity.ok(service.listar());
     }
 
     @GetMapping("/{id}")

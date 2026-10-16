@@ -2,10 +2,10 @@ spring:
   application:
     name: sigai
   datasource:
-    url: jdbc:postgresql://localhost:5432/db_sigai_imoveis
+    url: jdbc:postgresql://localhost:5432/db_sigai
     username: postgres
     password: admin
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     show-sql: true

@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "imoveis")
 @Data
@@ -18,4 +21,7 @@ public class Imovel {
     private String endereco;
     private Double valorAluguel;
     private String descricao;
+
+    @OneToMany(mappedBy = "imovel")
+    private List<Foto> fotos = new ArrayList<>();
 }
