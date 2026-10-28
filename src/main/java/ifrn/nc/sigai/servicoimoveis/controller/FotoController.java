@@ -2,7 +2,6 @@ package ifrn.nc.sigai.servicoimoveis.controller;
 
 import ifrn.nc.sigai.servicoimoveis.dto.request.FotoRequestDTO;
 import ifrn.nc.sigai.servicoimoveis.dto.response.FotoResponseDTO;
-import ifrn.nc.sigai.servicoimoveis.model.Foto;
 import ifrn.nc.sigai.servicoimoveis.service.FotoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -51,7 +50,7 @@ public class FotoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> excluir(@PathVariable Long id) {
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
 
         service.deletar(id);
 
