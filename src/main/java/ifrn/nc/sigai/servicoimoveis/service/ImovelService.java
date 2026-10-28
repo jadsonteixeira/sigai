@@ -5,18 +5,16 @@ import ifrn.nc.sigai.servicoimoveis.dto.response.ImovelResponseDTO;
 import ifrn.nc.sigai.servicoimoveis.exception.ImovelNaoEncontradoException;
 import ifrn.nc.sigai.servicoimoveis.model.Imovel;
 import ifrn.nc.sigai.servicoimoveis.repository.ImovelRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ImovelService {
 
     private final ImovelRepository repository;
-
-    public ImovelService(ImovelRepository repository) {
-        this.repository = repository;
-    }
 
     public ImovelResponseDTO criar(ImovelRequestDTO dto) {
         Imovel salvo = repository.save(toEntity(dto));
