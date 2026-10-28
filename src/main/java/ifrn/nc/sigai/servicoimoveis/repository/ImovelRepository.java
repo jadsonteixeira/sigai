@@ -7,9 +7,7 @@ import java.util.List;
 
 public interface ImovelRepository extends JpaRepository<Imovel, Long> {
 
-    List<Imovel> findByEndereco(String endereco);
-
-    List<Imovel> findByValorAluguelLessThan(Double valor);
-
-    List<Imovel> findByEnderecoContainingIgnoreCase(String trecho);
+    List<Imovel> findByEnderecoContainingIgnoreCase(String endereco);
+    List<Imovel> findByValorAluguelLessThanEqual(Double valorMaximo);
+    List<Imovel> findByEnderecoContainingIgnoreCaseAndValorAluguelLessThanEqual(String endereco, Double valorMaximo);
 }
